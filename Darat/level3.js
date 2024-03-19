@@ -10,14 +10,16 @@ class level3 extends Phaser.Scene {
         // Step 1, load JSON
  this.load.tilemapTiledJSON("level3", "assets/level3.tmj");
 
- this.load.spritesheet("Darat", "assets/character/Darat.png", {
+ this.load.spritesheet("Darat", "assets/character/Darat.png",
+ this.load.spritesheet("Darat", "assets/character/Daren.png", {
     frameWidth: 64,
     frameHeight: 64,
- });
+ }));
 
         // Step 2 : Preload any images here
  this.load.image("kitchenimg", "assets/items/12_Kitchen_32x32.png")
  this.load.image("foodimg", "assets/items/food.png")
+ this.load.image("Darenimg", "assets/character/Daren.png")
  this.load.image("roombuilderimg", "assets/wallnfloor/Room_Builder_32x32.png")
  this.load.image("trimsndoorsimg", "assets/wallnfloor/trimsanddoors.png")
 
@@ -34,6 +36,7 @@ let map = this.make.tilemap({ key: "level3"});
     // 1st parameter is name in Tiled,
     // 2nd parameter is key in Preload
     let Kitchen_32x32Tiles = map.addTilesetImage("12_Kitchen_32x32", "kitchenimg");
+    let DarenTiles = map.addTilesetImage("Daren", "Darenimg");
     let foodTiles = map.addTilesetImage("food", "foodimg");
     let Room_Builder_32x32Tiles = map.addTilesetImage("Room_Builder_32x32", "roombuilderimg");
     let trimsanddoorsTiles = map.addTilesetImage("trimsanddoors", "trimsndoorsimg");
@@ -41,7 +44,7 @@ let map = this.make.tilemap({ key: "level3"});
 
     //Step 5  create an array of tiles
     let tilesArray = [
-        Kitchen_32x32Tiles, foodTiles, Room_Builder_32x32Tiles, trimsanddoorsTiles
+        Kitchen_32x32Tiles, DarenTiles, foodTiles, Room_Builder_32x32Tiles, trimsanddoorsTiles
     ]
 
     // Step 6  Load in layers by layers

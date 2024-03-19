@@ -18,7 +18,7 @@ class preloadScene extends Phaser.Scene {
             let playerPos = {};
         playerPos.x = 420
         playerPos.y = 1213
-            this.scene.start("level1",{playerPos: playerPos});
+            this.scene.start("intro1",{playerPos: playerPos});
             }, this );
 
     }

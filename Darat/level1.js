@@ -49,6 +49,7 @@ let map = this.make.tilemap({ key: "level1"});
     ]
 
     // Step 6  Load in layers by layers
+    this.linesLayer = map.createLayer("lines",tilesArray,0,0);
     this.floorLayer = map.createLayer("floor",tilesArray,0,0);
     this.floor2Layer = map.createLayer("2ndfloor",tilesArray,0,0);
     this.stairsLayer = map.createLayer("stairs",tilesArray,0,0);
@@ -108,9 +109,10 @@ let map = this.make.tilemap({ key: "level1"});
     // this.cursors = this.input.keyboard.createCursorKeys();
     this.keys = this.input.keyboard.addKeys("W,A,S,D");
 
-    
-    this.floorLayer.setCollisionByExclusion(-1, true);
-    this.physics.add.collider(this.player, this.floorLayer);
+    this.linesLayer.setCollisionByExclusion(-1, true);
+    this.physics.add.collider(this.player, this.linesLayer);
+    // this.floorLayer.setCollisionByExclusion(-1, true);
+    // this.physics.add.collider(this.player, this.floorLayer);
     this.floor2Layer.setCollisionByExclusion(-1, true);
     this.physics.add.collider(this.player, this.floor2Layer);
     // this.stairsLayer.setCollisionByExclusion(-1, true);
@@ -123,8 +125,8 @@ let map = this.make.tilemap({ key: "level1"});
     this.physics.add.collider(this.player, this.fenceLayer);
     this.mailboxLayer.setCollisionByExclusion(-1, true);
     this.physics.add.collider(this.player, this.mailboxLayer);
-    this.rockLayer.setCollisionByExclusion(-1, true);
-    this.physics.add.collider(this.player, this.rockLayer);
+    // this.rockLayer.setCollisionByExclusion(-1, true);
+    // this.physics.add.collider(this.player, this.rockLayer);
     this.treesLayer.setCollisionByExclusion(-1, true);
     this.physics.add.collider(this.player, this.treesLayer);
     this.trees2Layer.setCollisionByExclusion(-1, true);
